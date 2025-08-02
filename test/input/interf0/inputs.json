@@ -1,0 +1,16 @@
+[
+    {
+        "file": null,
+        "image": {
+            "name": "AD_plaques_patchvolume_020.mha"
+        },
+        "value": null,
+        "interface": {
+            "slug": "light-sheet-3d-microscopy",
+            "kind": "Image",
+            "super_kind": "Image",
+            "relative_path": "images/light-sheet-3d-microscopy",
+            "example_value": null
+        }
+    }
+]
