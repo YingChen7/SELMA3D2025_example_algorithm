@@ -6,7 +6,7 @@ set -e
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # Set default container name
-DOCKER_IMAGE_TAG="example-algorithm-preliminary-development-phase-task-2"
+DOCKER_IMAGE_TAG="example-algorithm-preliminary-development-phase-task-4"
 
 echo ""
 echo "= STEP 1 = (Re)build the image"
