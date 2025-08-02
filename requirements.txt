@@ -1,2 +1,5 @@
 SimpleITK
 numpy
+monai==1.1.0
+torch
+einops
