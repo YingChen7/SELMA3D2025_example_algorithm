@@ -90,7 +90,6 @@ def interf0_handler():
         print(f.read())
     '''
     # For now, let us make bogus predictions
-    
     model_inferer = partial(sliding_window_inference, roi_size = [128, 128, 128],
                             sw_batch_size = 1,
                             predictor = model,
@@ -100,15 +99,14 @@ def interf0_handler():
         output_logits = model_inferer(input)
     prob = torch.sigmoid(output_logits)
     
-    output_isolated_biological_structure = prob[0, 0].detach().cpu().numpy()
-    output_isolated_biological_structure = (output_isolated_biological_structure>0.5).astype(numpy.int8)
-    print(output_isolated_biological_structure.shape)
-
+    output_contiguous_biological_structure = prob[0, 0].detach().cpu().numpy()
+    output_contiguous_biological_structure = (output_contiguous_biological_structure>0.5).astype(numpy.int8)
+    print(output_contiguous_biological_structure.shape)
 
     # Save your output
     write_array_as_image_file(
-        location=OUTPUT_PATH / "images/isolated-biological-structure",
-        array=output_isolated_biological_structure,
+        location=OUTPUT_PATH / "images/contiguous-biological-structure",
+        array=output_contiguous_biological_structure,
     )
 
     return 0
