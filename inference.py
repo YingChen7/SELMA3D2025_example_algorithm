@@ -54,7 +54,7 @@ def interf0_handler():
     input_light_sheet_3d_microscopy = load_image_file_as_array(
         location=INPUT_PATH / "images/light-sheet-3d-microscopy",
     )
-
+    input_light_sheet_3d_microscopy = (input_light_sheet_3d_microscopy - numpy.min(input_light_sheet_3d_microscopy))/(numpy.max(input_light_sheet_3d_microscopy)-numpy.min((input_light_sheet_3d_microscopy)))
     # Process the inputs: any way you'd like, here we show-case torch
     _show_torch_cuda_info()
 
@@ -80,7 +80,7 @@ def interf0_handler():
     model.load_state_dict(model_dict)
     model.eval()
     model.to(device)
-    
+
     '''
     # Option 2: upload them as a separate tarball to Grand Challenge (go to your Algorithm > Models). The resources in the tarball will be extracted to `model_dir` at runtime.
     model_dir = Path("/opt/ml/model")
@@ -90,7 +90,7 @@ def interf0_handler():
         print(f.read())
     '''
     # For now, let us make bogus predictions
-
+    
     model_inferer = partial(sliding_window_inference, roi_size = [128, 128, 128],
                             sw_batch_size = 1,
                             predictor = model,
