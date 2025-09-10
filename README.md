@@ -1,4 +1,4 @@
-# SELMA3D 2025: Example for building a container image of your algorithm for Preliminary Development Phase Task 1 with SSL 
+# SELMA3D 2025: Example for building a container image of your algorithm for Final Test Phase Task 1 with SSL 
 
 ### Step 1: Implement your solution  
 * In [requirements.txt](requirements.txt), list the packages required for your solution.
