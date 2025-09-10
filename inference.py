@@ -80,9 +80,9 @@ def interf0_handler():
     model.load_state_dict(model_dict)
     model.eval()
     model.to(device)
-
-    # Option 2: upload them as a separate tarball to Grand Challenge (go to your Algorithm > Models). The resources in the tarball will be extracted to `model_dir` at runtime.
+    
     '''
+    # Option 2: upload them as a separate tarball to Grand Challenge (go to your Algorithm > Models). The resources in the tarball will be extracted to `model_dir` at runtime.
     model_dir = Path("/opt/ml/model")
     with open(
         model_dir / "a_tarball_subdirectory" / "some_tarball_resource.txt", "r"
@@ -103,7 +103,7 @@ def interf0_handler():
     output_isolated_biological_structure = prob[0, 0].detach().cpu().numpy()
     output_isolated_biological_structure = (output_isolated_biological_structure>0.5).astype(numpy.int8)
     print(output_isolated_biological_structure.shape)
-    
+
 
     # Save your output
     write_array_as_image_file(
